@@ -1,35 +1,50 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from "react";
+import PokemonCard from "./components/PokemonCard";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [pokemons, setPokemons] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchPokemons = async () => {
+      try {
+        const response = await fetch(
+          "https://pokeapi.co/api/v2/pokemon?limit=20"
+        );
+        const data = await response.json();
+
+        const detailedData = await Promise.all(
+          data.results.map(async (pokemon) => {
+            const res = await fetch(pokemon.url);
+            return await res.json();
+          })
+        );
+
+        setPokemons(detailedData);
+      } catch (err) {
+        setError("Error al cargar los Pokémon 😢");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPokemons();
+  }, []);
+
+  if (loading) return <p className="text-center mt-5">Cargando Pokémon...</p>;
+  if (error) return <p className="text-danger text-center">{error}</p>;
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="container text-center mt-4">
+      <h1 className="mb-4">Mi Pokedex</h1>
+      <div className="d-flex flex-wrap justify-content-center gap-3">
+        {pokemons.map((pokemon) => (
+          <PokemonCard key={pokemon.id} pokemonData={pokemon} />
+        ))}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
