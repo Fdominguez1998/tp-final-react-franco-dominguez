@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import PokemonCard from "./components/PokemonCard";
+import Navbar from "./components/Navbar";
 
 function App() {
   const [pokemons, setPokemons] = useState([]);
@@ -36,14 +37,17 @@ function App() {
   if (error) return <p className="text-danger text-center">{error}</p>;
 
   return (
-    <div className="container text-center mt-4">
-      <h1 className="mb-4">Mi Pokedex</h1>
-      <div className="d-flex flex-wrap justify-content-center gap-3">
-        {pokemons.map((pokemon) => (
-          <PokemonCard key={pokemon.id} pokemonData={pokemon} />
-        ))}
+    <>
+      <Navbar />
+      <div className="container text-center mt-4">
+        <h1 className="mb-4">Mi Pokedex</h1>
+        <div className="d-flex flex-wrap justify-content-center gap-3">
+          {pokemons.map((pokemon) => (
+            <PokemonCard key={pokemon.id} pokemonData={pokemon} />
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
