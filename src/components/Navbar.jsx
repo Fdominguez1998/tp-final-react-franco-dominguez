@@ -4,15 +4,18 @@ import { Link, NavLink } from "react-router-dom";
 function Navbar() {
   const handleSearch = (e) => {
     e.preventDefault();
-    // Aquí puedes agregar la lógica para buscar Pokémon
     console.log("Buscar Pokémon...");
   };
 
   return (
     <nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
-          Pokédex
+        <Link className="navbar-brand d-flex align-items-center" to="/">
+          <img
+            src="/Poké_Ball_icon.svg.png"
+            alt="Pokédex"
+            style={{ width: "40px", height: "40px" }}
+          />
         </Link>
         <button
           className="navbar-toggler"
@@ -26,7 +29,7 @@ function Navbar() {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <NavLink className="nav-link" to="/" end>
                 Home
@@ -37,25 +40,7 @@ function Navbar() {
                 Pokémons
               </NavLink>
             </li>
-
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/info">
-                Info
-              </NavLink>
-            </li>
           </ul>
-
-          <form className="d-flex" role="search" onSubmit={handleSearch}>
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Search Pokemon"
-              aria-label="Search"
-            />
-            <button className="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
         </div>
       </div>
     </nav>

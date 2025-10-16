@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 import PokemonList from "./pages/PokemonList";
 import Home from "./pages/Home";
 import Info from "./pages/Info";
-
+import "./App.css";
 import PokemonDetails from "./pages/PokemonDetails";
 
 function App() {

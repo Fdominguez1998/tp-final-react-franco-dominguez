@@ -1,0 +1,23 @@
+body {
+  background: linear-gradient(180deg, #a1c4fd 0%, #c2e9fb 100%);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+h1,
+h5 {
+  font-weight: 600;
+}
+
+.badge {
+  font-weight: 500;
+}

@@ -1,16 +1,57 @@
-# React + Vite
+# 🌟 My Pokedex
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Una aplicación web de pokemon desarrollada con React y Vite que permite descubrir y ver los detalles de cualquier pokemon a tu gusto.
 
-Currently, two official plugins are available:
+## ✨ Características Principales
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🎯 **Lista completa**: Visualiza todos los pokemon
+- 🔍 **Detalles individuales**: Información completa de cada Pokémon (stats, tipos, habilidades, movimientos)
+- 📱 **Navegación Responsive**: Menú hamburguesa para dispositivos móviles
+- ⚡ **Navegación rápida**: Sistema de routing optimizado con React Router
 
-## React Compiler
+## 🛠️ Tecnologías Utilizadas
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+### Frontend
 
-## Expanding the ESLint configuration
+- **React** 19.1.1 - Biblioteca de JavaScript para interfaces de usuario
+- **Vite** 7.1.7 - Herramienta de construcción y desarrollo ultra-rápida
+- **React Router DOM** 7.9.4 - Navegación y routing SPA
+- **Bootstrap 5** – Estilos y diseño responsive
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### API
+
+- **PokéAPI** - API REST para datos completos de Pokémon
+
+### Estilos
+
+- **CSS3** - Estilos personalizados con variables CSS
+- **Responsive Design** - Diseño adaptable para todos los dispositivos
+
+## 📦 Instalación
+
+### Prerrequisitos
+
+- **Node.js** (versión 16 o superior)
+- **npm** o **yarn**
+
+### Pasos de instalación
+
+1. **Clona el repositorio**
+
+   ```bash
+   git clone https://github.com/Fdominguez1998/tp-final-react-franco-dominguez.git
+   cd tp-final-react-franco-dominguez
+   ```
+
+2. **Instala las dependencias**
+   ```bash
+   npm install
+   ```
+
+## 🚀 Ejecución
+
+Para ejecutar la aplicación:
+
+```bash
+npm run dev
+```
