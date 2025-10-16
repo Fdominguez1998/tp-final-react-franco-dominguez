@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, NavLink } from "react-router-dom";
 
 function Navbar() {
   const handleSearch = (e) => {
@@ -10,9 +11,9 @@ function Navbar() {
   return (
     <nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        <Link className="navbar-brand" to="/">
           Pokédex
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -27,61 +28,32 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
+              <NavLink className="nav-link" to="/" end>
                 Home
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Tipos
-              </a>
+              <NavLink className="nav-link" to="/pokemons">
+                Pokémons
+              </NavLink>
             </li>
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Más
-              </a>
-              <ul className="dropdown-menu">
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Favoritos
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Top 10
-                  </a>
-                </li>
-                <li>
-                  <hr className="dropdown-divider" />
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Configuración
-                  </a>
-                </li>
-              </ul>
-            </li>
+
             <li className="nav-item">
-              <a className="nav-link disabled" aria-disabled="true">
-                Deshabilitado
-              </a>
+              <NavLink className="nav-link" to="/info">
+                Info
+              </NavLink>
             </li>
           </ul>
+
           <form className="d-flex" role="search" onSubmit={handleSearch}>
             <input
               className="form-control me-2"
               type="search"
-              placeholder="Buscar Pokémon"
+              placeholder="Search Pokemon"
               aria-label="Search"
             />
             <button className="btn btn-outline-success" type="submit">
-              Buscar
+              Search
             </button>
           </form>
         </div>
