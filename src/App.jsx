@@ -7,6 +7,8 @@ import PokemonList from "./pages/PokemonList";
 import Home from "./pages/Home";
 import Info from "./pages/Info";
 
+import PokemonDetails from "./pages/PokemonDetails";
+
 function App() {
   return (
     <div className="d-flex flex-column min-vh-100">
@@ -16,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/pokemons" element={<PokemonList />} />
+          <Route path="/perfil/:pokemonName" element={<PokemonDetails />} />
           <Route path="/info" element={<Info />} />
         </Routes>
       </main>
